@@ -105,4 +105,19 @@ interface RestaurantApiService {
         @Body request: UpdateOrderStatusRequest
     ): Response<Unit>
 
+    @PATCH("restaurants/{review_id}/reviews")
+    suspend fun submitReplyReview(
+        @Header("Authorization") token: String,
+        @Path("review_id") reviewId: Long,
+        @Body request: ReplyReviewDto
+    ): Response<Unit>
+
+    @GET("restaurants/{id}/statistics")
+    suspend fun getRestaurantStatistics(
+        @Header("Authorization") token: String,
+        @Path("id") restaurantId: Int
+    ): Response<List<IncomeStatistics>>
+
+
+
 }

@@ -1,4 +1,4 @@
-package com.example.apfront.ui.screens.admin
+package com.example.apfront.ui.screens.admin_hub
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -225,7 +225,7 @@ fun RestaurantTab(restaurants: List<RestaurantDto>, onStatusChange: (Long, Strin
 }
 
 @Composable
-fun UserTab(users: List<AdminUserDto>, onStatusChange: (Long, String) -> Unit) {
+fun UserTab(users: List<AdminUserDto>, onStatusChange: (String, String) -> Unit) {
     LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         items(users) { user ->
             Card(modifier = Modifier.fillMaxWidth()) {

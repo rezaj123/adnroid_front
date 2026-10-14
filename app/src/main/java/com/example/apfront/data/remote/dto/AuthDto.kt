@@ -38,11 +38,17 @@ data class RegisterRequest(
     val email: String?,
     val password: String,
     val role: String, // "buyer", "seller", or "courier"
-    val address: String
+    val address: String,
+    val profileImageBase64: String?,
+    @SerializedName("bank_info") val bankInfo: BankInfoDto?
 )
 
 data class RegisterResponse(
     val message: String,
     @SerializedName("user_id") val userId: String,
-    val token: String
+    val token: String,
+    @SerializedName("access_token") val accessToken: String,
+    @SerializedName("refresh_token") val refreshToken: String
 )
+data class ForgotPasswordRequest(val email: String)
+data class ResetPasswordRequest(val email: String, val code: String, @SerializedName("new_password") val newPassword: String)

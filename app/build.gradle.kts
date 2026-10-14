@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.apfront"
-    compileSdk = 34 // Using the latest stable SDK
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.apfront"
@@ -45,8 +45,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
 
+    implementation(libs.androidx.appcompat)
+
+
     // Compose
-    implementation(platform(libs.androidx.compose.bom)) // BOM is declared once, first
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
